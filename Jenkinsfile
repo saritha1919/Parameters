@@ -5,7 +5,7 @@ pipeline {
 	stages {
 		stage('Source') { 
 			steps {
-		echo "display selected values:${params.Choice}
+		              echo "display selected values:${params.Choice}"
 			 }
 		 }
    }
