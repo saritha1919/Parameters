@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: ['Sonar', 'Deployment'], description: '', name: 'Choice')])])
+properties([parameters([booleanParam(defaultValue: false, description: '', name: 'Sonar'), booleanParam(defaultValue: false, description: '', name: 'Deploy')])])
 pipeline {
 	
 	agent any
