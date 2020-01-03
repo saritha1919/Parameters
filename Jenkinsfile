@@ -4,8 +4,9 @@ pipeline {
    
   stages {
         stage ('Code analysis') {
+             echo "Value of choice: " +params.CodeAnalysis
             when {
-                echo "Value of choice: " +params.CodeAnalysis
+               
                 // Only say hello if a "greeting" is requested
                 expression { params.CodeAnalysis == 'true' }
             }
