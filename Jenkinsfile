@@ -1,15 +1,15 @@
-properties([parameters([choice(choices: ['greeting', 'silence'], description: '', name: 'REQUESTED_ACTION')])])
+properties([parameters([booleanParam(defaultValue: false, description: '', name: 'CodeAnalysis'), booleanParam(defaultValue: false, description: '', name: 'Deployment')])])
 pipeline {
     agent any
    
   stages {
-        stage ('Speak') {
+        stage ('Code analysis') {
             when {
                 // Only say hello if a "greeting" is requested
-                expression { params.REQUESTED_ACTION == 'greeting' }
+                expression { params.CodeAnalysis == 'true' }
             }
             steps {
-                echo "Hello, bitwiseman!"
+                echo "code analysis done."
             }
         }
     }
